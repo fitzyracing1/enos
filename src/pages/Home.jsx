@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import AreaCard from "@/components/AreaCard";
 import SalesChatBot from "@/components/SalesChatBot";
+import LeadCaptureForm from "@/components/LeadCaptureForm";
 
 const HOW_IT_WORKS = [
   {
@@ -286,6 +287,50 @@ export default function Home() {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+
+      {/* Lead Capture Section */}
+      <section className="py-24 bg-gradient-to-br from-indigo-600 via-purple-700 to-indigo-800">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="inline-block bg-white/10 border border-white/20 text-white/90 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+                Stay in the loop
+              </span>
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Get notified when your area hits 60%
+              </h2>
+              <p className="text-white/70 text-lg leading-relaxed mb-6">
+                Drop your email and we'll send you weekly progress updates. When your neighborhood hits the goal, you'll be the first to know.
+              </p>
+              <div className="space-y-3 text-white/80 text-sm">
+                {["Weekly area progress updates", "Your personal referral link to invite neighbors", "Alert when 60% goal is reached", "Automatic refund notice if goal is missed"].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <div className="w-5 h-5 bg-emerald-400/20 border border-emerald-400/40 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-emerald-400 text-xs">✓</span>
+                    </div>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-2xl">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Get your referral link</h3>
+                <LeadCaptureForm />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
