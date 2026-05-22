@@ -1,0 +1,26 @@
+{
+  "name": "Area",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "description": "Name of the community area" },
+    "city": { "type": "string", "description": "City" },
+    "state": { "type": "string", "description": "State abbreviation (e.g. CA)" },
+    "description": { "type": "string", "description": "Description of the community area" },
+    "image_url": { "type": "string", "format": "uri", "description": "Hero image URL" },
+    "target_members": { "type": "integer", "description": "Target number of members for the area" },
+    "current_members": { "type": "integer", "description": "Current number of active members" },
+    "monthly_pool": { "type": "number", "description": "Current monthly contribution pool in dollars" },
+    "total_collected": { "type": "number", "description": "Total funds collected in escrow" },
+    "escrow_amount": { "type": "number", "description": "Funds currently held in escrow pending goal" },
+    "goal_reached": { "type": "boolean", "description": "Whether the 60% membership goal has been reached" },
+    "goal_reached_date": { "type": "string", "format": "date", "description": "Date the goal was reached" },
+    "deadline": { "type": "string", "format": "date", "description": "Deadline to reach goal before refunds are issued" },
+    "status": {
+      "type": "string",
+      "enum": ["active", "goal_reached", "refunding", "refunded"],
+      "default": "active",
+      "description": "Current area status"
+    }
+  },
+  "required": ["name", "city", "state"]
+}

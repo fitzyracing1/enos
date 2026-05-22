@@ -1,0 +1,27 @@
+{
+  "name": "Membership",
+  "type": "object",
+  "properties": {
+    "area_id": { "type": "string", "description": "Reference to the Area" },
+    "area_name": { "type": "string", "description": "Cached area name" },
+    "subscription_type": {
+      "type": "string",
+      "enum": ["monthly", "premium"],
+      "default": "monthly",
+      "description": "monthly = $1/mo, premium = $9/mo"
+    },
+    "monthly_amount": { "type": "number", "description": "Monthly contribution in dollars" },
+    "status": {
+      "type": "string",
+      "enum": ["active", "paused", "cancelled", "refunded"],
+      "default": "active"
+    },
+    "joined_date": { "type": "string", "format": "date" },
+    "total_contributed": { "type": "number", "description": "Total amount contributed by this member" },
+    "stripe_customer_id": { "type": "string", "description": "Stripe customer ID" },
+    "stripe_subscription_id": { "type": "string", "description": "Stripe subscription ID" },
+    "email": { "type": "string", "format": "email", "description": "Member email address" },
+    "name": { "type": "string", "description": "Member display name" }
+  },
+  "required": ["area_id"]
+}

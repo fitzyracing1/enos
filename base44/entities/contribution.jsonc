@@ -1,0 +1,21 @@
+{
+  "name": "Contribution",
+  "type": "object",
+  "properties": {
+    "area_id": { "type": "string", "description": "Reference to the Area" },
+    "area_name": { "type": "string", "description": "Cached area name" },
+    "membership_id": { "type": "string", "description": "Reference to the Membership" },
+    "amount": { "type": "number", "description": "Contribution amount in dollars" },
+    "month": { "type": "string", "description": "Month of contribution (YYYY-MM)" },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "in_escrow", "released", "refunded"],
+      "default": "in_escrow",
+      "description": "Escrow status of this payment"
+    },
+    "stripe_payment_intent_id": { "type": "string", "description": "Stripe PaymentIntent ID" },
+    "refunded_at": { "type": "string", "format": "date-time", "description": "When refund was issued" },
+    "released_at": { "type": "string", "format": "date-time", "description": "When funds were released (goal reached)" }
+  },
+  "required": ["area_id", "amount"]
+}
