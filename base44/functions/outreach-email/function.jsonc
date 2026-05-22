@@ -1,0 +1,15 @@
+{
+  "name": "outreach-email",
+  "entry": "index.ts",
+  "automations": [
+    {
+      "name": "daily-outreach",
+      "type": "scheduled",
+      "schedule_mode": "recurring",
+      "schedule_type": "simple",
+      "repeat_unit": "days",
+      "repeat_interval": 1,
+      "is_active": true
+    }
+  ]
+}

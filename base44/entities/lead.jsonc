@@ -1,0 +1,31 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "description": "Lead's full name" },
+    "email": { "type": "string", "format": "email", "description": "Lead's email address" },
+    "zip_code": { "type": "string", "description": "Lead's ZIP code" },
+    "city": { "type": "string", "description": "Lead's city" },
+    "state": { "type": "string", "description": "Lead's state" },
+    "area_id": { "type": "string", "description": "Matched community area ID" },
+    "area_name": { "type": "string", "description": "Matched community area name" },
+    "status": {
+      "type": "string",
+      "enum": ["new", "contacted", "interested", "joined", "unsubscribed"],
+      "default": "new"
+    },
+    "source": {
+      "type": "string",
+      "enum": ["organic", "referral", "chat_bot", "email_campaign", "social"],
+      "default": "organic"
+    },
+    "referral_code": { "type": "string", "description": "This lead's unique referral code for sharing" },
+    "referred_by_code": { "type": "string", "description": "Referral code that brought this lead" },
+    "referral_count": { "type": "integer", "default": 0, "description": "How many people this lead has referred" },
+    "outreach_count": { "type": "integer", "default": 0, "description": "Number of emails sent to this lead" },
+    "last_contacted_at": { "type": "string", "format": "date-time" },
+    "joined_at": { "type": "string", "format": "date-time" },
+    "notes": { "type": "string" }
+  },
+  "required": ["email"]
+}

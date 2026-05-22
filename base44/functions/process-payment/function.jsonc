@@ -1,0 +1,4 @@
+{
+  "name": "process-payment",
+  "entry": "index.ts"
+}
